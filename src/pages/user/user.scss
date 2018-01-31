@@ -1,0 +1,101 @@
+page-user {
+
+.cover_image_container{
+    overflow: hidden;
+    height: 200px;
+}
+
+.cover_image_container img{
+    min-width: 100%;
+    height: auto;
+    z-index: 0;
+    width: auto;
+    max-width: none;
+    max-height: none; 
+}
+
+.user_info{
+    -webkit-box-shadow: inset 0px 52px 43px -30px rgba(0,0,0,0.27);
+    -moz-box-shadow: inset 0px 52px 43px -30px rgba(0,0,0,0.27);
+    box-shadow: inset 0px 52px 43px -30px rgba(0,0,0,0.27);
+}
+
+.display_container{
+    background-color: white;
+    padding: 5px;
+    width: fit-content;
+    position: relative;
+    border: 10px;
+    top: -55px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 0px solid #000000;
+    margin-left: 10px;
+    
+}
+
+.display_container img{
+    height: 70px;
+    width: 70px;
+}
+
+.user_base_info{
+    position: relative;
+    top: -140px;
+    left: 100px;
+    color: white;
+    text-shadow: 2px 2px #333;
+    font-size: 1.8rem;
+    height: 5px;
+}
+.user_base_info span{
+    display: block;
+    margin-top: 4px;
+}
+
+.user_body{
+    padding-left: 15px;
+}
+
+.profile_social_bar{
+    float: right;
+    margin-right: 20px;
+    position: relative;
+    top:-75px;
+    font-size: 2rem;
+}
+.profile_social_bar_icon{
+    color: #4aacbc;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.user_about{
+    text-align: center
+}
+
+.user_body_title{
+    display: block;
+    width: 100%;
+    height: auto;
+    font-size: 30px;
+    color: #49ADBC;
+    text-align: center;
+    padding: .5em 0;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+    margin: 1em 0;
+    border-top: 1px solid #ccc;
+}
+
+.user_body p{
+    font-family: 'Titillium Web', sans-serif;
+    color: #454545;
+    font-weight: 300;
+    text-align: justify;
+}
+
+
+}
+

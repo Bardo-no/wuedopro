@@ -1,0 +1,42 @@
+<!--
+  Generated template for the ServicePopOverPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding>
+    <button ion-button icon-only float-right (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+          <ion-avatar>
+             <img src="{{this.activeService.imageUrl}}">
+           </ion-avatar>
+         <h2>{{this.activeService.name}}</h2>
+         <p class="service_description" >{{this.activeService.description}}</p>
+      <ion-list class="options-extra" *ngIf="this.activeService.optionRequiered" >
+        <ion-item text-wrap *ngFor="let option of this.activeService._options" (click)="setOption(option.elementID)" [ngClass]="{'service_option_active': option.active }">
+          <img *ngIf="option.imageUrl" src="{{option.imageUrl}}"  class="service_option_image">{{option.name}}
+          <p *ngIf="option.description" class="service_option_description">{{option.description}}</p>
+        </ion-item>
+      </ion-list>
+
+      <div *ngIf="this.activeService.paxRequiered" class="service_pax">
+         pax: {{this.activeService.actualPax}} 
+         <button ion-button icon-only float-right (click)="removePax()"><ion-icon name="remove"></ion-icon></button>
+         <button ion-button icon-only float-right (click)="addPax()"><ion-icon name="add"></ion-icon></button>
+        
+      </div>
+
+</ion-content>
+
+
+<ion-footer>
+    <div class="totals-extra">
+        <span class="cost" >COST</span>
+        <span class="price" >${{this.serviceCost}}</span>
+        <span class="currency" >USD</span>
+        </div>
+        <hr>
+        <button ion-button full [color]="addServiceNamedColor" (click)="addServiceClick()">{{addServiceText}}</button>
+</ion-footer>

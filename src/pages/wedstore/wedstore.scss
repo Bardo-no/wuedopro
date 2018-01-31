@@ -1,0 +1,402 @@
+page-wedstore {
+    .option_selectors{
+    display: flex;
+    background-color: #f1edea;
+    border-radius: 4px;
+}
+
+.option_selectors .item
+{
+    background-color: transparent !important;
+    
+}
+
+.option_selectors .item-md.item-block .item-inner{
+    border: none;
+}
+
+.option_selectors ion-select{
+    max-width: none !important;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #9c9c9c;
+}
+
+.option_selectors .select-md .select-icon .select-icon-inner {
+    left: 5px;
+    top: 50%;
+    margin-top: -4px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 9px solid;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    color: rgb(74, 172, 188);
+    pointer-events: none;
+}
+
+
+/*package style*/
+
+.wedStorePack{
+    color: white;
+}
+.pack-desc{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.pack-desc p{
+    color: white;
+}
+.pack-name {
+    text-transform: uppercase;
+    padding-top: 30px;
+    width: auto;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 10px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+}
+.pack-desc {
+    width: auto;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    padding-bottom: 10px;
+}
+
+.pack-desc p{
+    font-size: 1.2rem;
+}
+
+.package-divider {
+    display: block;
+    width: 100%;
+    background-color: rgb(73, 73, 73);
+    height: 30px;
+    position: relative;
+    top:2px;
+}
+
+.heart_wedstore {
+    width: 14px;
+    height: 14px;
+    margin-top: 5px;
+}
+
+.pack-list-item {
+    display: inline-flex;
+    width: 100%;
+    /* margin: 0px; */
+    margin: auto;
+    text-align: center;
+    margin-left: 5px;
+    color: #404040;
+    font-weight: 400;
+}
+
+.heart_item_container {
+    margin-top: 11px;
+    display: flex;
+    margin-bottom: 3px !important;
+    margin-left: 19%;
+    margin-bottom: 0px !important;
+}
+
+.hearts_container{
+    margin-bottom: 3px;
+}
+
+.pack-details{
+    text-align: center;
+}
+
+.pack_det_item{
+    text-align: center;
+    margin-top: 5px;
+    width: 80%;
+    padding: 13px;
+    display: inline-block;
+}
+
+.package-total-price {
+    display: block;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 15px;
+}
+
+.cost, .price, .currency {
+    display: inline-block;
+    font-family: 'Titillium Web', sans-serif;
+    vertical-align: baseline;
+    font-size: 20px;
+    /*color: #333;*/
+}
+
+.price {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+/*Services style*/
+
+.service_shortcuts{
+    margin-top: 10px;
+}
+.service_choser_container{
+    vertical-align: top;
+    padding-right: 10px;
+    background-color: #F1EDEA;
+    color: #888785;
+}
+
+.services_title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E8E5E3;
+    font-size: 1.2em;
+}
+
+.service_picker{
+    background-color: transparent !important;
+    color: #888785 !important;
+}
+
+/*STORE STYLES*/
+.serviciosaqui {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+.config-extra-bottom {
+    display: inline-flex;
+    width: 120px;
+    height: auto;
+    vertical-align: top;
+    margin: 10px;
+}
+
+.delete-extra {
+    font-size: 18px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    background-color: #333;
+    color: #fff;
+    width: 26px;
+    padding: 13px 0;
+    line-height: 0;
+    border-radius: 100%;
+    display: none;
+    cursor: pointer;
+    text-align: center;
+    /* box-shadow: 0px 0px 4px #000; */
+}
+
+.pack-add-extra-bottom {
+    width: 120px;
+    height: auto;
+    color: #454545;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+}
+
+.pack-add-extra-bottom img {
+    width: 80px !important;
+    height: 80px;
+    border-radius: 100%;
+    display: block;
+}
+
+
+.wedServiceCheckDiv{
+padding:10px;
+padding-left: 20px;
+}
+
+.wedServiceCheck{
+
+}
+
+.wedServiceCheckLabel{
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    text-transform: uppercase;
+}
+
+
+@media only screen and (max-width: 800px){
+ .serviciosaqui {
+    display: inline-block;
+    width: 300px;
+}
+}
+
+
+@media only screen and (max-width: 500px){
+.config-extra-bottom {
+    width: 100px;
+}
+}
+
+.buynow{
+background-image: url() !important;
+}
+
+.section_footer{
+    padding-top: 0px;
+}
+
+.footer{
+    height: 112px !important;
+}
+
+.buynow_label{
+    font-size: 1.5rem;
+}
+
+.buynow_icon{
+    float: right;
+}
+.price{
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+/* Venue Style*/
+.venue_selectors{
+    display:block;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+
+
+.venue_selector{
+    background-color: #A099D4;
+    text-align: center;
+    margin: 2px 20px 1px 20px;
+    padding: 10px 0px 5px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+.venue_selector_checkbox{
+    margin-right: 10px;
+    position: relative;
+    top:2px;
+}
+
+.venue_misc_bg{
+    background-color: #F1EDEB;
+    margin:0px;
+    padding-bottom: 1px;
+}
+
+.venue_Profile{
+    text-align: center;
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+   
+}
+
+.venue_Profile img{
+    width: auto;
+    height: 180px;
+}
+
+.hearts_outbox{
+    padding-bottom: 10px;
+    text-align: center;
+}
+.hearts_container{
+    padding-left: 20px;
+}
+
+.venue_paxes{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    
+}
+
+.venue_pax  {
+    font-size: 2.5em;
+    margin-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.venue_mainbg{
+    background-color: #A099D4;
+    color: white;
+}
+
+.venue_optbg{
+    background-color: #4A484A;
+    color: white;
+}
+
+.venue_options{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    
+}
+
+.venue_option{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 200px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.venue_combs{
+    text-align: center;
+}
+.venue_comb{
+    padding:10px;
+    font-size: 1.2rem;
+}
+
+
+
+}
+
+
+
+

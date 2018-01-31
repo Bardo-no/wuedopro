@@ -1,0 +1,162 @@
+<!--
+  Generated template for the WedstorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<wed-header></wed-header>
+
+
+<ion-content padding>
+
+
+<div class="option_selectors">
+  <ion-item>
+    <ion-select id="currency" [(ngModel)]="this.wedstore.actualCurrencyISO" (ionChange)="changeCurrency()">
+      <ion-option *ngFor="let option of this.wedstore._currecies" [value] = "option.ISO">{{option.ISO}}</ion-option>
+    </ion-select>
+  </ion-item>
+<ion-item>
+  <ion-select id="state" [(ngModel)]="this.wedstore.acutalStateISO" (ionChange)="changeState()">
+      <ion-option *ngFor="let option of this.wedstore._states" [value] = "option.ISO">{{option.name}}</ion-option>
+  </ion-select>
+</ion-item>
+</div>
+
+<div padding>
+    <ion-segment >
+      <ion-segment-button *ngFor='let pack of this.wedstore._packs' (click)="packSelectorClick(pack.elementID);" value="{{pack.elementID}}">
+        {{pack.name}}
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+<div class="package">
+  <!-- Package CARD -->
+  <ion-card  *ngFor='let pack of this.wedstore._packs' class="wedStorePack" style="display:none" id="wedStorePack{{pack.elementID}}" [style.background-color]="pack.colorBase">
+      <div class="pack-name">{{pack.name}}</div>
+      <div class="pack-desc" ><p>{{pack.description}}</p>
+      </div>
+      <div class="package-divider"></div>
+      <div class="pack-details" [style.background-color]="pack.colorSecondary">
+        <div class="pack-detail" *ngFor='let sect of pack._options'>
+            <div class="pack_det_item" [style.background-color]="pack.colorBase" (click)="sectBoxClick(sect.elementID, pack.elementID); wedStoreUpdateUi();">
+                <input type="checkbox" id="wedSectCheck{{sect.elementID}}" [ngModel]="sect.active"  >
+                {{sect.name}}
+              </div>
+              <div class="hearts_container" *ngFor="let heart of sect.hearts">
+                <div class="heart_item_container" ><img class="heart_wedstore" src="http://vmi118470.contaboserver.net/~wedproduction/sites/default/files/default_images/HAwesome_0.png">
+                <span class="pack-list-item">{{heart}}</span>
+                </div>
+            </div>
+        </div>
+        
+      </div>
+      <div class="service_shortcuts">
+          <ion-item *ngFor="let link of pack._elementLinks" (click)="wedStoreCheckClick(link);" [style.background-color]="pack.colorComplement" >
+              <input type="checkbox" id="wedServiceCheckP{{pack.elementID}}{{link}}" class="wedServiceCheck wedServiceCheck{{link}}"/>
+              {{getServiceShortcutName(link)}}
+            </ion-item>
+      </div>
+      <div class="package-total-price" ><span class="cost" >COST</span>
+        <span class="price" id="AWESOME-price" data-drupal-selector="edit-cost-price">${{this.wedstore.packShowPrice}}</span>
+        <span class="currency" >{{this.wedstore.actualCurrencyISO}}</span>
+        </div>
+  </ion-card>
+</div>
+
+<div class="venues">
+  <!-- Package CARD -->
+  <ion-card  class="wedStoreVenues venue_mainbg" >
+      <div class="pack-name">Venues</div>
+      <div class="pack-desc" ><p>Wedding locations for your special day.</p>
+      </div>
+      <div class="package-divider"></div>
+
+      <div class="venue_misc_bg">
+      <div class="venue_selectors">
+        <div *ngFor="let venue of this.wedstore._venues" class="venue_selector venue_selector{{venue.elementID}}" (click)="selectVenue(venue.elementID);">
+          <input type="checkbox" class="venue_selector_checkbox venueSelectCheck{{venue.elementID}}">{{venue.name}}
+        </div>
+      </div>
+      <div class="venue-details">
+        <div  *ngFor='let venue of this.wedstore._venues' class="venue-detai venueshow venueshow{{venue.elementID}}">
+              <div class="venue_Profile">
+                <img src="{{venue.imageUrl}}">
+              </div>
+              <div class="hearts_outbox">
+              <div class="hearts_container" *ngFor="let heart of venue.hearts">
+                <div class="heart_item_container" ><img class="heart_wedstore" src="{{venue.heartImageUrl}}">
+                <span class="pack-list-item">{{heart}}</span>
+                </div>
+            </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div >
+        <div class="venue_paxes" *ngFor="let venue of this.wedstore._venues" class="venueshow venueshow{{venue.elementID}} venue_pax  venue_pax{{venue.elementID}}">
+        <div *ngIf="venue.paxRequiered" class="venue_pax_pax">
+          PAX {{venue.actualPax}} 
+          <button ion-button icon-only float-right class="venue_optbg" (click)="removeVenuePax(venue.elementID);"><ion-icon name="remove"></ion-icon></button>
+          <button ion-button icon-only float-right class="venue_optbg" (click)="addVenuePax(venue.elementID);"><ion-icon name="add"></ion-icon></button>
+         
+       </div>
+       </div>
+        
+      
+      <div  *ngFor='let venue of this.wedstore._venues'  class="venueshow venueshow{{venue.elementID}} venue_options venue_options{{venue.elementID}}">
+          <div class="venue_option venue_optbg" *ngFor="let option of venue._options" (click)="setVenueOption(option.elementID,venue.elementID);">
+              <input type="checkbox" id="wedVenueOptionCheck{{option.elementID}}" class="wedOptionVenueCheck wedOptionVenueCheck{{option.elementID}}"/>
+              {{option.name}}
+          </div>
+      </div>
+            <div *ngFor='let venue of this.wedstore._venues'  class="venueshow venueshow{{venue.elementID}} venue_combs venue_comb{{venue.elementID}}" >
+              <div class="venue_comb venue_mainbg" *ngFor="let comb of venue._optionCombinations" (click)="setVenueComb(comb.elementID,venue.elementID);">
+                  <input type="checkbox" id="wedVenuecombCheck{{comb.elementID}}" class="wedcombVenueCheck wedcombVenueCheck{{comb.elementID}}"/>
+                  {{comb.name}}
+              </div>
+              </div>
+      <div class="package-total-price" ><span class="cost" >COST</span>
+        <span class="price" id="AWESOME-price" data-drupal-selector="edit-cost-price">${{this.wedstore.venueShowPrice}}</span>
+        <span class="currency" >{{this.wedstore.actualCurrencyISO}}</span>
+        </div>
+        </div>
+  </ion-card>
+</div>
+
+
+
+<div class="service_choser_container">
+  <div class="services_title">SERVICES</div>
+    <div *ngFor="let wedService of this.wedstore._services" (click)="wedStoreCheckClick(wedService.elementID);" class="wedServiceCheckDiv"  >
+      <input type="checkbox" id="wedServiceCheck{{wedService.elementID}}" class="wedServiceCheck wedServiceCheck{{wedService.elementID}}"/>
+      <span class="wedServiceCheckLabel">{{wedService.name}}</span>
+    </div>
+</div>
+
+<div id="serviciosaqui" class="serviciosaqui">
+      <span class="config-extra-bottom" *ngFor="let wedService of this.wedstore._services" id="wedServiceThumb{{wedService.elementID}}">
+      <div class="delete-extra wedstore-Remove-Service" data-service="104">x</div>
+      <div class="pack-add-extra-bottom" >
+        <img class="wedstore-Open-Service" data-service="104" src="{{wedService.imageUrl}}">
+        {{wedService.name}}
+      </div>
+      </span>
+</div>
+
+</ion-content>
+
+
+<ion-footer>
+  <div class="section_footer">
+
+      <div id="costoTotalRight" class="costoTotalRight"><span class="cost">COST</span>
+        <span class="price" id="gTotal"> ${{this.wedstore.grandTotal}}</span>
+        <span class="currency">{{this.wedstore.actualCurrencyISO}}</span>
+        </div>
+        
+        <button class="buynow" id="che" type="button"><span class="buynow_label">Proceed To Checkout</span><span class="buynow_icon"><img src="assets/imgs/cart-w.png"></span></button>
+ </div>
+</ion-footer>
+

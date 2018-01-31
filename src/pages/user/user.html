@@ -1,0 +1,64 @@
+<!--
+  Generated template for the UserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<wed-header></wed-header>
+<ion-content padding>
+
+    <div class="user_header">
+        <div class="cover_image_container">
+          <img class="cover_image" src="{{actualUser.coverImgUrl}}">
+        </div>
+        <div class="user_info">
+          <div class="display_container"><img class="user_display" src="{{actualUser.displayImgUrl}}"></div>
+          <div class="user_base_info">
+            <span class="user_name">{{actualUser.name}}</span>
+            <span class="user_type">{{actualUser.proType}}</span>
+          </div>
+          <div class="profile_social_bar">
+            <span class="profile_social_bar_icon"> <a href="{{actualUser.socialFacebookUrl}}"> <ion-icon name="logo-facebook"></ion-icon> </a></span>
+            <span class="profile_social_bar_icon"> <a href="{{actualUser.socialPinterestUrl }}"><ion-icon name="logo-pinterest"></ion-icon></a></span>
+            <span class="profile_social_bar_icon"> <a href="{{actualUser.socialTwitterUrl}}"><ion-icon name="logo-twitter"></ion-icon></a></span>
+            <span class="profile_social_bar_icon"> <a href="{{actualUser.socialMailUrl}}"><ion-icon name="mail"></ion-icon></a></span>
+          </div>
+        </div>
+    </div>
+    <div class="user_body">
+    <div class="user_about">
+      <span class="user_body_title">About Me</span>
+      <p>{{actualUser.description}}</p>
+    </div>
+    <div class="user_services">
+        <span class="user_body_title">Services</span>
+        <p>{{actualUser.services}}</p>
+      </div>
+    </div>
+      <div class="galleries">
+        <div class="video_gallery">
+            <span class="user_body_title">Videos</span>
+          do sliders</div>
+        <div class="photo_gellery">
+            <span class="user_body_title">Photos</span>
+        </div>
+      </div>
+      <div classs="event_gallery">
+        do cards
+      </div>
+   
+</ion-content>
+
+
+<ion-footer>
+  <div class="section_footer">
+<span class="social-media-mobile">
+      <a href="http://vimeo.com/wedproduction" target="_blank" id="a-vimeo"></a>
+        <a href="https://www.youtube.com/channel/UCtH8QDOvUlr_kQ3D8Obpz9A" target="_blank" id="a-youtube"></a>
+        <a href="http://instagram.com/wedproduction" target="_blank" id="a-instagram"></a>
+        <a href="https://pinterest.com/wedproduction/" target="_blank" id="a-pinterest"></a>
+        <a href="https://www.facebook.com/WedProduction.mx" target="_blank" id="a-facebook"></a>
+        <a href="http://twitter.com/@wedproduction" target="_blank" id="a-twitter"></a>
+   </span>
+ </div>
+</ion-footer>
