@@ -57,6 +57,7 @@ export class UsersDataProvider {
 
 
   public Login(user:string, pass:string){
+    //testinggit
     this.authUser = user;
     this.authPassword = pass;
   }
