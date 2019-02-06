@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { ProfessionalsPage } from '../pages/professionals/professionals';
 import { WedstorePage } from '../pages/wedstore/wedstore';
 import { UserPage } from '../pages/user/user';
+import { EventsPage } from '../pages/events/events'
 
 
 @Component({
@@ -29,7 +30,7 @@ export class MyApp {
       { title: 'List', component: ListPage },
       { title: 'Professionals', component: ProfessionalsPage},
       { title: 'Store', component: WedstorePage},
-      { title: 'User', component: UserPage},
+      { title: 'Events', component: EventsPage}
     ];
 
   }

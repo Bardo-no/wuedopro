@@ -1,0 +1,53 @@
+<!--
+  Generated template for the ProfessionalsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<wed-header></wed-header>
+
+
+<ion-content padding>
+
+<div class="WedProduction_mob_Profilters">
+  <ion-searchbar></ion-searchbar>
+  <ion-searchbar></ion-searchbar>
+
+</div>
+<div class="WedProduction_mob_EventsList">
+
+
+    <div class="event_card" *ngFor="let event of this.eventsData.event_list">
+        <ion-card>
+            <div class="event_card_img_container" style="background: url({{event.cover}});">
+           </div>
+            <ion-card-content>
+                <ion-item class="item item-block item-md">
+                  <ion-avatar item-start="">
+                    <img [src]=event.profile>
+                  </ion-avatar>
+                  <div class="event_base_info">
+                  <span class="event_name">{{event.title}}</span>
+                  <span class="event_date">{{event.date}}</span>
+                  </div>
+              </ion-item>
+      
+            </ion-card-content>
+          </ion-card>
+    </div>
+</div>
+
+</ion-content>
+
+<ion-footer>
+  <div class="section_footer">
+<span class="social-media-mobile">
+      <a href="http://vimeo.com/wedproduction" target="_blank" id="a-vimeo"></a>
+        <a href="https://www.youtube.com/channel/UCtH8QDOvUlr_kQ3D8Obpz9A" target="_blank" id="a-youtube"></a>
+        <a href="http://instagram.com/wedproduction" target="_blank" id="a-instagram"></a>
+        <a href="https://pinterest.com/wedproduction/" target="_blank" id="a-pinterest"></a>
+        <a href="https://www.facebook.com/WedProduction.mx" target="_blank" id="a-facebook"></a>
+        <a href="http://twitter.com/@wedproduction" target="_blank" id="a-twitter"></a>
+   </span>
+ </div>
+</ion-footer>

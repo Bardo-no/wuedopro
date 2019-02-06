@@ -6,10 +6,13 @@
       </button>
       <ion-title><a class="header_logo is-active"> <img src="./assets/imgs/logo.png"></a></ion-title>
       <ion-buttons end>
-         <button ion-button class="navbar_mob_default" (click)="openMyUserPage();">
+         <button *ngIf="this.usersData.isAuth" ion-button class="navbar_mob_default" (click)="openMyUserPage();">
           My account
         </button>
-        <button ion-button class="navbar_mob_default">
+        <button *ngIf="this.usersData.isAuth" ion-button class="navbar_mob_default">
+          Log Out
+        </button>
+        <button *ngIf="!this.usersData.isAuth" (click)="openLoginPage();" class="navbar_mob_default">
           Log In
         </button>
       </ion-buttons>

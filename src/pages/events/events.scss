@@ -1,0 +1,35 @@
+page-events {
+
+    .WedProduction_mob_EventsList{
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+.event_card {
+    display: block;
+    min-width: 250px;
+    width: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.event_card_img_container{
+    height: 105px;
+    background-size: cover;
+    background-position: left;
+}
+
+
+.card-content{
+    padding-left: 0px;
+}
+
+.event_base_info span {
+    display: block;
+    font-size: 1.5rem;
+}
+
+
+}

@@ -10,12 +10,16 @@ import { ProfessionalsPage } from '../pages/professionals/professionals';
 import { WedstorePage } from '../pages/wedstore/wedstore';
 import { ServicePopOverPage } from '../pages/service-pop-over/service-pop-over';
 import { UserPage } from '../pages/user/user';
+import { LoginPage } from '../pages/login/login';
+import { EventsPage } from '../pages/events/events';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StoreDataProvider } from '../providers/store-data/store-data';
 import { UsersDataProvider } from '../providers/users-data/users-data';
 import { ComponentsModule } from '../components/components.module';
+import { IonicStorageModule } from '@ionic/storage';
+import { EventsDataProvider } from '../providers/events-data/events-data';
 
 
 
@@ -29,12 +33,15 @@ import { ComponentsModule } from '../components/components.module';
     ProfessionalsPage,
     WedstorePage,
     ServicePopOverPage,
-    UserPage
+    UserPage,
+    LoginPage,
+    EventsPage
   ],
   imports: [
     BrowserModule,
     ComponentsModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     HttpClientModule
   ],
   bootstrap: [IonicApp],
@@ -45,7 +52,9 @@ import { ComponentsModule } from '../components/components.module';
     ProfessionalsPage,
     WedstorePage,
     ServicePopOverPage,
-    UserPage
+    UserPage,
+    LoginPage,
+    EventsPage
   ],
   providers: [
     StatusBar,
@@ -53,6 +62,7 @@ import { ComponentsModule } from '../components/components.module';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     StoreDataProvider,
     UsersDataProvider,
+    EventsDataProvider,
   ]
 })
 export class AppModule {}

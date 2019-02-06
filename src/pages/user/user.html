@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <wed-header></wed-header>
-<ion-content padding>
+<ion-content>
 
     <div class="user_header">
         <div class="cover_image_container">
@@ -18,35 +18,84 @@
             <span class="user_type">{{actualUser.proType}}</span>
           </div>
           <div class="profile_social_bar">
-            <span class="profile_social_bar_icon"> <a href="{{actualUser.socialFacebookUrl}}"> <ion-icon name="logo-facebook"></ion-icon> </a></span>
-            <span class="profile_social_bar_icon"> <a href="{{actualUser.socialPinterestUrl }}"><ion-icon name="logo-pinterest"></ion-icon></a></span>
-            <span class="profile_social_bar_icon"> <a href="{{actualUser.socialTwitterUrl}}"><ion-icon name="logo-twitter"></ion-icon></a></span>
-            <span class="profile_social_bar_icon"> <a href="{{actualUser.socialMailUrl}}"><ion-icon name="mail"></ion-icon></a></span>
+            <span class="profile_social_bar_icon"> <a href="http://www.facebook.com/sharer.php?u=http://vmi118470.contaboserver.net/~wedproduction/professional/{{actualUser.name}}"> <ion-icon name="logo-facebook"></ion-icon> </a></span>
+            <span class="profile_social_bar_icon"> <a href="http://pinterest.com/pin/create/link/?url=http://vmi118470.contaboserver.net/~wedproduction/professional/{{actualUser.name}}&media={{actualUser.coverImgUrl}}&description=''"><ion-icon name="logo-pinterest"></ion-icon></a></span>
+            <span class="profile_social_bar_icon"> <a href="https://twitter.com/share?text=Professionals Wed Production:&hashtags=WEDPRODUCTION&via=wedproduction&url=http://vmi118470.contaboserver.net/~wedproduction/professional/{{actualUser.name}}"><ion-icon name="logo-twitter"></ion-icon></a></span>
+            <span class="profile_social_bar_icon"> <a href="http://vmi118470.contaboserver.net/~wedproduction/professional/mailto:?subject=Name - Wedding&body=http://vmi118470.contaboserver.net/~wedproduction/professional/{{actualUser.name}}"><ion-icon name="mail"></ion-icon></a></span>
           </div>
         </div>
     </div>
     <div class="user_body">
     <div class="user_about">
-      <span class="user_body_title">About Me</span>
+     
       <p>{{actualUser.description}}</p>
     </div>
-    <div class="user_services">
-        <span class="user_body_title">Services</span>
-        <p>{{actualUser.services}}</p>
-      </div>
     </div>
       <div class="galleries">
-        <div class="video_gallery">
-            <span class="user_body_title">Videos</span>
-          do sliders</div>
-        <div class="photo_gellery">
-            <span class="user_body_title">Photos</span>
+        <div class="video_gallery"  *ngIf="this.actualUser.VideoGallery?.length > 0">
+            <ion-slides  pager  loop>
+                <ion-slide *ngFor="let videourl of this.actualUser.VideoGallery">
+                   <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl("https://player.vimeo.com/video/"+videourl)'  class="wedproduction_mob_video_iframe" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                </ion-slide>
+              </ion-slides>
+          </div>
+        <div class="photo_gellery" *ngIf="this.actualUser.PhotoGallery?.length > 0">
+            <ion-slides class="wedproduction_mob_slider"  pager loop>
+                <ion-slide *ngFor="let photo of this.actualUser.PhotoGallery">
+                    <img src="{{photo}}">
+                  </ion-slide>
+                  </ion-slides>
         </div>
+        <button class="contactBtn">Contact </button>
       </div>
-      <div classs="event_gallery">
-        do cards
-      </div>
-   
+
+   <div class="event_gallery">
+      <div class="event_header">
+       Events
+     </div>
+     <div class="events_container">
+  <div class="event_card">
+      <ion-card>
+          <div class="event_card_img_container" style="background: url(http://vmi118470.contaboserver.net/~wedproduction/sites/default/files/styles/large/public/images/mediapro/4654684_0.jpg?itok=z22wn6J1);">
+         </div>
+          <ion-card-content>
+              <ion-item class="item item-block item-md">
+                <ion-avatar item-start="">
+                  <img src="http://vmi118470.contaboserver.net/~wedproduction/sites/default/files/images/profile/wp-display-1441132843.png">
+                </ion-avatar>
+                <div class="event_base_info">
+                <span class="event_name">Juan Carlos Elías</span>
+                <span class="event_date">20-10-2018</span>
+                </div>
+            </ion-item>
+    
+          </ion-card-content>
+        </ion-card>
+  </div>
+
+
+  <div class="event_card">
+      <ion-card>
+          <div class="event_card_img_container" style="background: url(http://vmi118470.contaboserver.net/~wedproduction/sites/default/files/styles/large/public/images/mediapro/4654684_0.jpg?itok=z22wn6J1);">
+         </div>
+          <ion-card-content>
+              <ion-item class="item item-block item-md">
+                <ion-avatar item-start="">
+                  <img src="http://vmi118470.contaboserver.net/~wedproduction/sites/default/files/images/profile/wp-display-1441132843.png">
+                </ion-avatar>
+                <div class="event_base_info">
+                <span class="event_name">Juan Carlos Elías</span>
+                <span class="event_date">20-10-2018</span>
+                </div>
+            </ion-item>
+    
+          </ion-card-content>
+        </ion-card>
+  </div>
+
+  
+   </div>
+   </div>
 </ion-content>
 
 
